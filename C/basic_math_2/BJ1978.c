@@ -3,33 +3,39 @@
 int main()
 {
     int Ncase = 0;
-    int input = 0;
+    int tmp = 0;
+    int a = 0;
+    int target = 0;
+    int flag = 0;
     int cnt = 0;
-    int sosu =0;
 
-    scanf("%d", &Ncase);
+    scanf("%d",&Ncase);
 
-    for (int i = 0; i < Ncase; i++)
+    for (int n = 0; n < Ncase ; n++)
     {
-        scanf("%d", &input);
-        for (int m = 2; m <=input; m++)
-        {
-            if (input % m == 0)
-            {
-                cnt = cnt + 1;
-            }
-            if (cnt > 2)
-            {
-                break;
-            }
-        }
-        if (cnt == 1)
-        {
-            //printf("%d ",input);
-            sosu = sosu + 1;
-            cnt = 0;
-        }
+        scanf("%d",&target);
 
+        for (int m = 2; m <= target ; m ++)
+        {
+            if ( (target%m)== 0)
+            {
+                if(flag == 0)
+                {
+                    flag = 1;
+                }
+                else if (flag == 1)
+                {
+                    flag = 2;
+                    break;
+                }
+            }
+        
+        }
+        if (flag == 1)
+        {
+            cnt = cnt + 1;
+        }
+        flag = 0;
     }
-    printf("%d",sosu);
+    printf("%d",cnt);
 }

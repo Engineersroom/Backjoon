@@ -11,7 +11,7 @@ int main()
 
     scanf("%d %d", &M, &N);
 
-    for (int target = M; target < N; target++)
+    for (int target = M; target <= N; target++)
     {
         for (int m = 2; m <= target; m++)
         {
@@ -39,6 +39,9 @@ int main()
         }
         flag = 0;
     }
-    printf("%d\n",sum);
-    printf("%d",min);
+    if (first_flag != 0)
+    {
+        printf("%d\n", sum);
+    }
+    printf("%d", min);
 }
