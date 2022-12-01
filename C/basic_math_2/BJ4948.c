@@ -44,7 +44,7 @@ int main()
             {
                 if (arr[k]!=M)
                 {
-                printf("%d\n",arr[k]);
+                //printf("%d\n",arr[k]);
                 cnt = cnt + 1;
                 }
             }
