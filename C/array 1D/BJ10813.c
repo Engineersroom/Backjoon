@@ -19,7 +19,7 @@ int main()
         arr[i-1] = temp;
     }
 
-    for (int v = 0;v<(m+1);v++)
+    for (int v = 0;v<(n);v++)
     {
         printf("%d ",arr[v]);
     }
