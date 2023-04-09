@@ -12,9 +12,9 @@ int main()
         {
             str[i] = NULL;
         }
-        scanf("%s", str);
-        if (str[0] == '')
-            printf("out")
+        scanf("%[^\n]s", str);
+        if ( (str[0] == '\n')||(str[0]=='\t') )
+            printf("out");
         else
             printf("%s\r\n");
     }
