@@ -50,7 +50,7 @@ int main()
             temp_basket[i + k] = basket[j - k];
             //case 1. step 1
             //temp_baseket[0] = basket[2];
-            //case 1. step 2
+            //case 1. step 2ㅎ
             //temp_baseket[1] = basket[1];
             //case 1. step 3
             //temp_baseket[2] = basket[0]; 
