@@ -1,55 +1,54 @@
 #include <stdio.h>
+char a[100];
+char tme[100];
 
-int Basket[100];
-int tmpBasket[100];
-int main()
+int main(void)
 {
-    int N;
-    int M;
-    int I, J, K;
 
-    scanf("%d", &N); // Max Basket;
+    scanf("%s", a);
 
-    scanf("%d", &M); // Max Case;
-
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < 100; i++)
     {
-        Basket[i] = i+1;
-        // tmpBasket[i] = i;
-    }
-
-    for (int i = 0; i < M; i++)
-    {
-        scanf("%d %d %d", &I, &J, &K); // Begin, End , Middle
-        I = I - 1;
-        J = J - 1;
-        K = K - 1;
-        int a = 0;
-
-        for (int tmp = 0; tmp < (J - I + 1); tmp++)
+        if (a[i] == '\0')
         {
-            if ((K + tmp) <= J)
-            {
-                tmpBasket[tmp] = Basket[K + tmp];
-                a = tmp;
-            }
-            else // if (K+tmp > J)
-            {
-                tmpBasket[tmp] = Basket[I + tmp - a - 1];
-            }
-        }
-        for (int tmp = 0; tmp < (J - I + 1); tmp++)
-        {
-            Basket[I+tmp] = tmpBasket[tmp];
-        }
-        //Debug
-        // for (int tmp = 0; tmp < N ; tmp++)
-        // {
-        //     printf("%d ",Basket[tmp]);
+            // printf("number of charicter %d \r\n",i);
+            // break;
 
-        // }
-        // printf("\r\n");
-        //Debug
+            // 입력받은 문열의 끝에 도달했을 때, 그 문자열을 뒤집어서 비교한다.
+          //  printf("input : %s / last %d  \r\n", a, i);
+          //  printf("Output:");
+            // a 배열을 거꾸로 뒤집어서 tme 배열에 넣어야 한다.
+            for (int j = i; j >= 0; j--)
+            {
+                tme[i - j] = a[j];
+                // printf("%c", a[j]);
+            }
+            for (int k = 0 ; k <= i ; k ++)
+            {
+            //    printf("%c",tme[k]);
+            }
+            //printf("%s", tme);
+           // printf("\r\n");
+
+            for (int c = 0; c < i; c++)
+            {
+                if (a[c] == tme[c+1])
+                {
+                }
+                else
+                {
+
+                    printf("0");
+                    // for (int s = 0; s < i; s++)
+                    // {
+                    //     printf("compare : %d / original  %c copy %c \r\n", s, a[s], tme[c]);
+                    // }
+                    return 0;
+                }
+            }
+            printf("1");
+            return 0;
+           
+        }
     }
-    
 }
